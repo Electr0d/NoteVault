@@ -1,0 +1,14 @@
+{
+	"name": "notevault",
+	"version": "1.0.0",
+	"description": "Note taking app where encrypted notes are stored locally.",
+	"main": "src/index.js",
+	"scripts": {
+		"start": "electron ."
+	},
+	"author": "Hamza Alsarakbi",
+	"license": "ISC",
+	"devDependencies": {
+		"electron": "^11.2.0"
+	}
+}

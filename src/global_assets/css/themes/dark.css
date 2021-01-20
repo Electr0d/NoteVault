@@ -1,0 +1,12 @@
+:root {
+  --primary-background: rgb(20, 20, 20);
+  --primary-color: rgb(240, 240, 240);
+  --header-color: var(--primary-color);
+  --subheader-color: rgb(220, 220, 220);
+
+  /* accent */
+  --primary-accent: rgb(71, 187, 255);
+
+  /* input */
+  --primary-input: rgb(50, 50, 50);
+}

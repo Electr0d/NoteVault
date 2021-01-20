@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  color: var(--primary-color);
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+  transition: 0.2s ease-out;
+}
+body {
+  background: var(--primary-background);
+}
+.app {
+  padding-top: 30px;
+}
+body,
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header {
+  font-size: 36px;
+  color: var(--header-color);
+}
+.sub-header {
+  color: var(--subheader-color);
+}
+
+input {
+  background: transparent;
+  border: 2px solid transparent;
+  border: none;
+}
+
+button {
+  background: transparent;
+  border: 2px solid var(--primary-accent);
+  color: var(--primary-accent);
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.95);
+  transition: 0.1s ease-out;
+}
