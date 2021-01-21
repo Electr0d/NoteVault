@@ -13,6 +13,7 @@ body {
 }
 .app {
   padding-top: 30px;
+  width: 100vw;
 }
 body,
 .app {
@@ -29,9 +30,19 @@ body,
 }
 
 input {
-  background: transparent;
-  border: 2px solid transparent;
-  border: none;
+	margin: 5px;
+	padding: 5px;
+	background: transparent;
+	border: 2px solid var(--primary-input);
+	font-size: 14px;
+	border-radius: 5px;
+	color: var(--secondary-color);
+}
+input:hover {
+	border-bottom-color: var(--primary-accent);
+}
+input:focus {
+	border-color: var(--primary-accent);
 }
 
 button {
@@ -41,6 +52,7 @@ button {
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
+  margin: 5px;
 }
 
 button:active {

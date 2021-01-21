@@ -3,10 +3,14 @@
   --primary-color: rgb(240, 240, 240);
   --header-color: var(--primary-color);
   --subheader-color: rgb(220, 220, 220);
-
+  --error-color: rgb(250, 50, 50);
+  --primary-hover: rgb(60, 60, 60);
   /* accent */
   --primary-accent: rgb(71, 187, 255);
 
   /* input */
   --primary-input: rgb(50, 50, 50);
+
+  /* form */
+  --form-invalid: var(--error-color);
 }

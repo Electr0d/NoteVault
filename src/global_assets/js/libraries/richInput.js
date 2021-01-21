@@ -51,7 +51,6 @@ function inputInvalid(input, action) {
 }
 
 function checkRichInputValidity(e) {
-	console.log(e.target.value);
 	if(e.target.value == '') {
 		inputInvalid(e.target, 'add');
 	} else {

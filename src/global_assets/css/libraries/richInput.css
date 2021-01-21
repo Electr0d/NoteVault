@@ -70,7 +70,7 @@ form .rich-input:focus + .rich-input-label::after {
 .hide-show {
   position: absolute;
   right: 5px;
-  top: 13px;
+  top: 11px;
   cursor: pointer;
   padding: 4px;
   height: 26px;
@@ -85,7 +85,7 @@ form .rich-input:focus + .rich-input-label::after {
 	transform: scale(0.9);
 }
 .hide-show:hover {
-	background: var(--cell-hover);
+	background: var(--primary-hover);
 }
 .hide-show img { 
   width: 100%;

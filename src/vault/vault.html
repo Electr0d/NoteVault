@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="../global_assets/css/windowBar.css">
   <link rel="stylesheet" href="../global_assets/css/template.css">
   <link rel="stylesheet" href="../global_assets/css/libraries/richInput.css">
-  <link rel="stylesheet" href="assets/css/login.css">
-  <title>Login</title>
+  <link rel="stylesheet" href="assets/css/panel.css">
+  <link rel="stylesheet" href="assets/css/vault.css">
+  <title>Vault</title>
 </head>
 <body>
   <!-- Window Controls -->
@@ -17,12 +18,17 @@
     <div id="drag-region">
       <div id="window-title">
         <img src="" height="20px">
-        <span style="padding-left: 10px;">Login - NoteVault</span>
+        <span style="padding-left: 10px;">Vault - NoteVault</span>
       </div>
-
       <div id="window-controls">
         <div class="button" id="min-button">
           <img src="../global_assets/img/window_icons/minimize.png" class="window-icon">
+        </div>
+        <div class="button" id="max-button">
+          <img src="../global_assets/img/window_icons/maximize.png" class="window-icon">
+        </div>
+        <div class="button" id="restore-button">
+          <img src="../global_assets/img/window_icons/restore.png" class="window-icon">
         </div>
         <div class="button" id="close-button">
           <img src="../global_assets/img/window_icons/close.png" class="window-icon">
@@ -31,8 +37,23 @@
     </div>
   </header>
   <div class="app">
-    <div class="header">NoteVault</div>
-    <div class="sub-header">Created by: Hamza Alsarakbi</div>
+    <div class="panel">
+      <div class="panel-item panel-header">
+        <div class="panel-info">
+          <img class="panel-icon">
+          <div class="panel-name"></div>
+        </div>
+
+
+        <div class="panel-controls">
+          <img class="panel-control" id="add-control" src="../global_assets/img/dark/add.png" onclick="toggleAdd()">
+        </div>
+      </div>
+      <div class="panel-item panel-content">
+
+      </div>
+    </div>
+    <div class="content"></div>
   </div>
 
 
@@ -47,6 +68,7 @@
 
 
   <!-- Components -->
-  <script src="assets/js/login.js"></script>
+  <script src="assets/js/vault.js"></script>
+  <script src="assets/js/add.js"></script>
 </body>
 </html>

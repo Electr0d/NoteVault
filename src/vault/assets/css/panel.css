@@ -1,0 +1,43 @@
+.app {
+  padding: 10px;
+  padding-top: 40px;
+}
+
+.panel {
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  height: 60px;
+  border-radius: 10px;
+}
+.panel-header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  padding: 5px;
+}
+.panel-control {
+  padding: 5px;
+  height: 30px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.panel-control:hover {
+  background: var(--primary-hover);
+}
+.panel-control:active {
+  transform: scale(0.9);
+  transition: 0.1s ease-out;
+}
+
+.panel-down {
+  height: 200px;
+  background: rgba(40, 40, 40, 0.4);
+}
+
+.rotate {
+  transform: rotate(45deg);
+}
