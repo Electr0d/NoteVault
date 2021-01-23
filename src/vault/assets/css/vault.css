@@ -1,6 +1,9 @@
 .app {
   overflow-y: scroll;
 }
+.app.disable-scroll {
+  overflow-y: hidden;
+}
 #add-body {
   width: 100%;
   height: calc(100% - 65px);

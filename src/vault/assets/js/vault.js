@@ -1,4 +1,7 @@
+const marked = require('marked');
+
 const el = {
+  app: document.querySelector('.app'),
   panel: document.querySelector('.panel'),
   panelItems: {
     add: document.querySelector('#add-control'),

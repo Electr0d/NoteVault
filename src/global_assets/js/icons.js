@@ -13,4 +13,6 @@ const icons = {
 	gear: '../global_assets/img/dark/gear.png',
 	arrowDown: '../global_assets/img/dark/arrow-down.png',
 	copy: '../global_assets/img/dark/copy.png',
+	fullscreen: '../global_assets/img/dark/fullscreen.png',
+	unfullscreen: '../global_assets/img/dark/unfullscreen.png',
 }

@@ -15,6 +15,10 @@ const controlsUI = {
     src: icons.trashcan,
     onclick: 'deleteNote(this)'
   },
+  fullscreen: {
+    src: icons.fullscreen,
+    onclick: 'fullscreenToggle(this)'
+  }
 }
 
 function addNote(index, title, body) {
@@ -30,18 +34,20 @@ function addNote(index, title, body) {
     let c = addElement('div', { class: `note-control-item ${control}-control`, id: control + '-control-' + index, onclick: controlsUI[control].onclick }, '', controls);
     addElement('img', { class: 'note-control-image', src: controlsUI[control].src }, '', c);
   }
-  addElement('textarea', { class: 'note-item note-body note-body-hidden', id: 'note-body-' + index, readonly: 'readonly' }, body, note);
+  addElement('div', { class: 'note-item note-body note-body-hidden', id: 'note-body-' + index, innerHTML: 'innerHTML' }, marked(body), note);
 }
 
 
-function expandToggle(e) {
+function expandToggle(e, action) {
   let index = e.id.replace("expand-control-", "");
   let header = document.querySelector('#note-header-' + index);
   let body = document.querySelector('#note-body-' + index);
+  let act = action ? action : 'toggle';
+  let altAction = action == 'add' ? 'remove' : action == 'remove' ? 'add' : 'toggle';
 
-  header.classList.toggle('note-header-expand');
-  body.classList.toggle('note-body-hidden');
-  e.classList.toggle('rotate-control');
+  header.classList[act]('note-header-expand');
+  body.classList[altAction]('note-body-hidden');
+  e.classList[act]('rotate-control');
 
 }
 
@@ -77,6 +83,7 @@ function deleteNote(e) {
     }
 
     delete data['note_' + config.notes.index - 1];
+    config.notes.index--;
 
 
     //
@@ -113,7 +120,11 @@ function edit(e) {
   let deleteControl = document.querySelector(deleteID);
   let deleteImage = document.querySelector(deleteID + ' img');
   document.querySelector('#note-title-' + index).removeAttribute('readonly');
-  document.querySelector('#note-body-' + index).removeAttribute('readonly');
+
+
+  let body = document.querySelector('#note-body-' + index);
+  body.textContent = data['note_' + index].body;
+  body.outerHTML = body.outerHTML.replace(/div/g, 'textarea');
 
 
 
@@ -153,17 +164,18 @@ function cancelEdit(e) {
 
 
   let noteData = data['note_' + index];
-  let note = [
-    'title',
-    'body'
-  ];
 
-  // reset values
-  for(let i = 0; i < note.length; i++) {
-    let element = document.querySelector(`#note-${note[i]}-${index}`)
-    element.setAttribute('readonly', '');
-    element.value = noteData[note[i]];
-  }
+  // reset title values
+  let title = document.querySelector(`#note-title-${index}`)
+  title.setAttribute('readonly', '');
+  title.value = noteData.title
+
+  // reset body values
+  let body = document.querySelector('#note-body-' + index);
+  body.outerHTML = body.outerHTML.replace(/textarea/g, 'div');
+  body = document.querySelector('#note-body-' + index);
+  body.innerHTML = marked(noteData.body);
+
 }
 
 function confirmEdit(e) {
@@ -193,5 +205,37 @@ function confirmEdit(e) {
     let noteData = data['note_' + index];
     noteData.title = title.value;
     noteData.body = body.value;
+
+    
+    // disable edit
+    title.setAttribute('readonly', '');
+
+    // update body values
+    body.outerHTML = body.outerHTML.replace(/textarea/g, 'div');
+    body = document.querySelector('#note-body-' + index);
+    body.innerHTML = marked(noteData.body);
+    
   }
+}
+
+
+function fullscreenToggle(e) {
+  let index = e.id.replace('fullscreen-control-', '');
+  e.classList.toggle('rotate-control');
+  let icon = document.querySelector(`#${e.id} img`);
+  let img = icon.src.includes('unfullscreen') ? 'fullscreen' : 'unfullscreen';
+  icon.src = icons[img];
+
+
+  el.app.classList.toggle('disable-scroll');
+  el.content.classList.toggle('note-fullscreen');
+  document.querySelector('#note-' + index).classList.toggle('note-fullscreen');
+  
+  // expand button
+  let expand = document.querySelector('#expand-control-' + index);
+  let action = expand.classList.contains('rotate-control') && el.content.classList.contains('note-fullscreen') ? 'add' : 'toggle';
+  expandToggle(expand, action);
+  let attributeType = expand.hasAttribute('onclick') ? 'removeAttribute' : 'setAttribute';
+
+  expand[attributeType]('onclick', 'expandToggle(this)');
 }
