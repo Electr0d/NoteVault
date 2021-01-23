@@ -9,15 +9,6 @@
   width: 100%;
 }
 .error {
-  color: var(--error-color);
-  opacity: 1;
-  display: block;
-  transform: translateX(0%);
   margin: 10px;
   height: 50px;
-}
-.no-error {
-  opacity: 0;
-  transform: translateX(-100%);
-  height: 0;
 }

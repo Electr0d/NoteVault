@@ -16,15 +16,16 @@ function init() {
 init();
 
 function submitForm() {
-  error('add');
+  let err = document.querySelector('#login-error');
+  error(err);
   let input = document.querySelector('#login-input-rich-input');
   // password is empty
   console.log(input.value, config.masterPassword);
   if(input.value == '') {
-    error('remove', 'Master password cannot be empty.');
+    error(err, 'show', 'Master password cannot be empty.');
   } else if (input.value == config.masterPassword)  {
     // password is correct
-    error('add');
+    error(err);
     ipcRenderer.send('login');
     win.close();
 		win.on('closed', () => {
@@ -34,12 +35,6 @@ function submitForm() {
 
   } else {
     // password is incorrect
-    error('remove', 'Password is incorrect.');
+    error(err, 'show', 'Password is incorrect.');
   }
-}
-
-function error(action, message) {
-  let error = document.querySelector('#login-error');
-  if(message) error.textContent = message;
-  error.classList[action]('no-error');
 }

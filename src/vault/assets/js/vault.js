@@ -4,7 +4,9 @@ const el = {
     add: document.querySelector('#add-control'),
     icon: document.querySelector('img.panel-icon'),
     name: document.querySelector('.panel-name'),
-  }
+    content: document.querySelector('.panel-content')
+  },
+  content: document.querySelector('.content')
 }
 document.body.addEventListener('keydown', e => {
   if (e.altKey && e.code == "KeyA") {

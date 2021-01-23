@@ -1,0 +1,10 @@
+.app {
+  overflow-y: scroll;
+}
+#add-body {
+  width: 100%;
+  height: calc(100% - 65px);
+}
+textarea {
+  resize: none;
+}

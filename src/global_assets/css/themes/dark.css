@@ -1,5 +1,6 @@
 :root {
   --primary-background: rgb(20, 20, 20);
+  --secondary-background: rgb(40, 40, 40);
   --primary-color: rgb(240, 240, 240);
   --header-color: var(--primary-color);
   --subheader-color: rgb(220, 220, 220);
@@ -10,7 +11,18 @@
 
   /* input */
   --primary-input: rgb(50, 50, 50);
+  --input-border: rgb(60, 60, 60);
 
   /* form */
   --form-invalid: var(--error-color);
+
+
+  /* note */
+  --note-background: rgba(50, 50, 50, 0.4);
+  --note-shadow: rgb(60, 60, 60);
+
+  /* scrollbar */
+  --scrollbar-track: rgb(60, 60, 60);
+  --scrollbar-thumb: var(--primary-accent);
+  --scrollbar-thumb-hover: var(--primary-accent);
 }

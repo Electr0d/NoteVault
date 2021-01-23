@@ -1,0 +1,96 @@
+.content {
+  padding-top: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.content-on-panel-down {
+  padding-top: 320px;
+}
+
+.note {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  background: var(--note-background);
+  border-radius: 20px;
+  width: calc(100vw - 50px);
+  animation: note-draw-in 0.3s ease-out;
+}
+
+@keyframes note-draw-in {
+  0% {
+    height: 0;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  60% {
+    height: 65px;
+    transform: translateX(4%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.note-header {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px solid transparent;
+}
+.note-title {
+  height: 40px;
+  width: 100%;
+}
+.note-header-expand {
+  border-bottom-color: var(--primary-accent);
+  backdrop-filter: brightness(0.6);
+}
+
+.note-controls {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.note-body {
+  height: 200px;
+}
+div.note-body {
+  padding: 10px;
+}
+.note:hover {
+  box-shadow: -2px 2px 5px var(--note-shadow);
+}
+.note .note-body-hidden {
+  height: 0;
+  padding: 0;
+  border: 0;
+  transform: scaleY(0);
+}
+.note-control-image{ 
+  height: 25px;
+}
+.note-control-item {
+  padding: 5px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+}
+.rotate-control {
+  transform: rotate(180deg);
+}
+.note-control-item:hover {
+  background: var(--primary-hover);
+}
+
+.note-draw-out {
+  transform: translateX(-100%) !important;
+  opacity: 0;
+  height: 0;
+}

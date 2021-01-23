@@ -10,5 +10,7 @@ const icons = {
 	remove: '../global_assets/img/dark/remove.png',
 	confirm: '../global_assets/img/dark/confirm.png',
 	add: '../global_assets/img/dark/add.png',
-	gear: '../global_assets/img/dark/gear.png'
+	gear: '../global_assets/img/dark/gear.png',
+	arrowDown: '../global_assets/img/dark/arrow-down.png',
+	copy: '../global_assets/img/dark/copy.png',
 }

@@ -1,16 +1,19 @@
 .app {
   padding: 10px;
-  padding-top: 40px;
 }
 
 .panel {
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 98%;
   padding: 10px;
   height: 60px;
   border-radius: 10px;
+  position: fixed;
+  top: 40px;
+  left: 0px;
+  z-index: 2;
 }
 .panel-header {
   display: flex;
@@ -18,6 +21,7 @@
   width: 100%;
   justify-content: space-between;
   padding: 5px;
+  align-items: center;
 }
 .panel-control {
   padding: 5px;
@@ -34,10 +38,38 @@
 }
 
 .panel-down {
-  height: 200px;
+  height: 300px;
   background: rgba(40, 40, 40, 0.4);
+}
+.panel-content {
+  transform: translateY(-100%);
+}
+.panel-down .panel-content {
+  transform: translateY(0%);
 }
 
 .rotate {
   transform: rotate(45deg);
+}
+
+.panel-info {
+  display: flex;
+  align-items: center;
+}
+.panel-name {
+  margin: 10px;
+  text-transform: uppercase;
+}
+.panel-icon {
+  height: 20px;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
