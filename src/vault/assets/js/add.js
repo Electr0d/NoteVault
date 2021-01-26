@@ -74,3 +74,16 @@ function addData() {
     inputs[0].select();
   }
 }
+
+
+let newData = {};
+let oldData = unpack(dir.data);
+data = oldData ? oldData : newData;
+parseNotes();
+setInterval(autoSave, 1000);
+
+function parseNotes() {
+  for(let note in data) {
+    addNote(data[note].index, data[note].title, data[note].body);
+  }
+}

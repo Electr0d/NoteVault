@@ -44,13 +44,7 @@ function unpackAll() {
   let newConfig = new Config("Alsarakbi");
   let oldConfig = unpack(dir.config);
   config = oldConfig ? oldConfig : newConfig;
-
-  
-  let newData = {};
-  let oldData = unpack(dir.data);
-  data = oldData ? oldData : newData;
-
-  if(window.title == 'Vault') parseNotes();
+    
 }
 
 // data
@@ -69,6 +63,17 @@ function save(action) {
     
     // save new key
     pack(dir.config, config);
+  } else if(action == 'hide') {
+    // remove button
+    let button = document.querySelector('.save-button');
+    // if button isn't null
+    if(button) {
+      button.style = 'transform: translateX(-100%); opacity: 0';
+      setTimeout(() => {
+        el.app.removeChild(button);
+        components.save.button = false;
+      }, 200);
+    }
   } else {
 
     // generate new key
@@ -76,6 +81,7 @@ function save(action) {
 
     // save all 
     save('config');
+    save('hide');
     pack(dir.key, key, true);
     pack(dir.data, data);
   }
@@ -121,8 +127,22 @@ function decrypt(text) {
 	decrypted = Buffer.concat([ decrypted, decipher.final() ]);
 	return decrypted.toString();
 }
-function parseNotes() {
-  for(let note in data) {
-    addNote(data[note].index, data[note].title, data[note].body);
+
+
+function autoSave() {
+  let savedData = decrypt(JSON.parse(fs.readFileSync(dir.data)));
+  let currentData = JSON.stringify(data);
+
+  // if data is changed
+  if(savedData != currentData) {
+    if(!components.save.button) {
+      components.save.button = true;
+      console.log('changed detected!');
+      addElement('button', { class: 'save-button', onclick: 'save()'}, 'Save', el.app);
+
+    }
+  } else {
+    components.save.button = false;
+    save('hide');
   }
 }

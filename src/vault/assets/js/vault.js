@@ -20,5 +20,8 @@ document.body.addEventListener('keydown', e => {
 let components = {
   panel: {
     add: false
+  },
+  save: {
+    button: false
   }
 }
