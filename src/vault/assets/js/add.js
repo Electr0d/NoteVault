@@ -1,6 +1,7 @@
 function toggleAdd() {
   togglePanel();
   el.panelItems.add.classList.toggle('rotate');
+  el.panelItems.header.classList.toggle('panel-header-on-panel-down');
   el.content.classList.toggle('content-on-panel-down');
   if(!components.panel.add) {
     setPanel('add', icons.add);
@@ -25,6 +26,7 @@ function toggleAdd() {
     addElement('span', { class: 'add-panel-item no-error error', id: 'add-error', }, 'error', form);
     addElement('button', { class: 'add-panel-item', id: 'add-submit', type: 'button', onclick: 'addData()' }, 'Add', form);
 
+    title.select();
   } else {
     el.panelItems.content.innerHTML = '';
     setPanel('');
@@ -65,5 +67,10 @@ function addData() {
     addNote(config.notes.index, inputs[0].value, inputs[1].value);
     data['note_' + config.notes.index] = new Note(config.notes.index, inputs[0].value, inputs[1].value);
     config.notes.index++;
+    
+    // reset all inputs
+    inputs[0].value = '';
+    inputs[1].value = '';
+    inputs[0].select();
   }
 }

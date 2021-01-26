@@ -14,7 +14,7 @@ html {
 	width: 100%;
 	backdrop-filter: blur(5px);
 	z-index: 999;
-	backdrop-filter: brightness(0.5) blur(4px);
+	backdrop-filter: brightness(0.7) blur(4px);
 }
 
 .maximized #titlebar {
@@ -30,16 +30,14 @@ html {
 
 #titlebar #drag-region {
 	display: grid;
-	grid-template-columns: auto 138px;
 }
 
 #window-title {
 	grid-column: 1;
 	display: flex;
 	align-items: center;
-	margin-left: 8px;
+	margin-left: 5px;
 	overflow-x: hidden;
-	font-family: "Segoe UI", sans-serif;
 	font-size: 12px;
 	overflow: hidden;
 }
@@ -52,16 +50,16 @@ html {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	line-height: 1.5;
+	white-space: nowrap;
 }
 
 #window-controls {
 	display: grid;
-	grid-template-columns: repeat(3, 30px);
+	grid-template-columns: repeat(4, 30px);
 	position: absolute;
 	top: 0;
 	right: 0;
 	height: 100%;
-	font-family: "Segoe MDL2 Assets";
 	font-size: 10px;
 }
 
@@ -86,7 +84,6 @@ html {
 
 /*** Hover over buttons */
 #window-controls .button:hover {
-	opacity: 0.8;
 	background-color: var(--primary-hover);
 }
 
@@ -94,26 +91,24 @@ html {
 	background-color: rgb(238, 37, 30);
 }
 
-.dialog {
+
+#min-button {
 	grid-column: 2;
-}
-#min-button:not(.dialog) {
-	grid-column: 1;
 }
 #max-button,
 #restore-button {
-	grid-column: 2;
+	grid-column: 3;
 }
-#close-button:active {
-	opacity: 0.8;
+#window-controls .button:active {
+	backdrop-filter: brightness(0.8);
 }
 
 #close-button {
-	grid-column: 3;
+	grid-column: 4;
 }
 
-#close-button {
-	grid-column: 3;
+#lock-button {
+	grid-column: 1;
 }
 
 #restore-button {

@@ -7,6 +7,7 @@ const el = {
     add: document.querySelector('#add-control'),
     icon: document.querySelector('img.panel-icon'),
     name: document.querySelector('.panel-name'),
+    header: document.querySelector('.panel-header'),
     content: document.querySelector('.panel-content')
   },
   content: document.querySelector('.content')

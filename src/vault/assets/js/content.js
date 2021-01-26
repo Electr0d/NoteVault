@@ -82,8 +82,8 @@ function deleteNote(e) {
       }
     }
 
-    delete data['note_' + config.notes.index - 1];
     config.notes.index--;
+    delete data['note_' + config.notes.index];
 
 
     //

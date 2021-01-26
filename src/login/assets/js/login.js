@@ -20,13 +20,21 @@ function submitForm() {
   error(err);
   let input = document.querySelector('#login-input-rich-input');
   // password is empty
-  console.log(input.value, config.masterPassword);
   if(input.value == '') {
     error(err, 'show', 'Master password cannot be empty.');
   } else if (input.value == config.masterPassword)  {
     // password is correct
     error(err);
+
+    // reset cooldowns
+    // reset cooldowns 
+    config.login = new Cooldown();
+    save('config');
+
     ipcRenderer.send('login');
+
+
+
     win.close();
 		win.on('closed', () => {
 			win = null;
@@ -36,5 +44,6 @@ function submitForm() {
   } else {
     // password is incorrect
     error(err, 'show', 'Password is incorrect.');
+    updateAttempts();
   }
 }

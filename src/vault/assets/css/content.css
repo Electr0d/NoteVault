@@ -36,7 +36,7 @@
   }
   60% {
     height: 65px;
-    transform: translateX(4%);
+    transform: translateX(3%);
     opacity: 1;
   }
   100% {

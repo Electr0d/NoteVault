@@ -12,6 +12,7 @@
 		"electron": "^11.2.0"
 	},
 	"dependencies": {
+		"crypto": "^1.0.1",
 		"marked": "^1.2.7"
 	}
 }

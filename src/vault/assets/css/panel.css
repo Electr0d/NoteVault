@@ -7,7 +7,6 @@
   display: flex;
   flex-direction: column;
   width: 98%;
-  padding: 10px;
   height: 60px;
   border-radius: 10px;
   position: fixed;
@@ -22,6 +21,12 @@
   justify-content: space-between;
   padding: 5px;
   align-items: center;
+  padding: 10px;
+  border-bottom: 2px solid transparent;
+}
+.panel-header-on-panel-down {
+  backdrop-filter: brightness(0.4);
+  border-bottom-color: var(--primary-accent);
 }
 .panel-control {
   padding: 5px;
@@ -42,6 +47,7 @@
   background: rgba(40, 40, 40, 0.4);
 }
 .panel-content {
+  padding: 10px;
   transform: translateY(-100%);
 }
 .panel-down .panel-content {
@@ -57,7 +63,8 @@
   align-items: center;
 }
 .panel-name {
-  margin: 10px;
+  margin-left: 10px;
+  font-size: 26px;
   text-transform: uppercase;
 }
 .panel-icon {
