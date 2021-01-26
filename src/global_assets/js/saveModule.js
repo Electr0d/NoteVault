@@ -34,17 +34,10 @@ class Key {
 let config, key, data;
 unpackAll();
 function unpackAll() {
-  let newKey = new Key();
-  let oldKey = unpack(dir.key, true)
-  key = oldKey ? oldKey : newKey;
+  key = unpack(dir.key, true);
   key.key = Buffer.from(key.key);
   key.iv = Buffer.from(key.iv);
-
-
-  let newConfig = new Config("Alsarakbi");
-  let oldConfig = unpack(dir.config);
-  config = oldConfig ? oldConfig : newConfig;
-    
+  config = unpack(dir.config);    
 }
 
 // data
