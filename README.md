@@ -39,8 +39,10 @@ Click on the fullscreen to maximize the note.
 
 
 ## Settings
-
 Click on the gear icon to open the settings so you can change the master password.
+
+## Tooltips
+When hovering over any button, a little tooltip appears, giving you a hint on what the button does.
 
 ## Saving
 Whenever you make changes, a "Save" button appears on the bottom left, prompting you to confirm your changes.
