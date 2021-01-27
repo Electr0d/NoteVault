@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="../global_assets/css/libraries/markdown.css">
   <link rel="stylesheet" href="../global_assets/css/libraries/toast.css">
   <link rel="stylesheet" href="../global_assets/css/libraries/richInput.css">
+  <link rel="stylesheet" href="../global_assets/css/libraries/window.css">
+  <link rel="stylesheet" href="../global_assets/css/libraries/tooltip.css">
   <link rel="stylesheet" href="../global_assets/css/libraries/scrollBar.css">
   <link rel="stylesheet" href="assets/css/vault.css">
   <link rel="stylesheet" href="assets/css/panel.css">
@@ -54,7 +56,12 @@
 
 
         <div class="panel-controls">
-          <img class="panel-control" id="add-control" src="../global_assets/img/dark/add.png" onclick="toggleAdd()">
+          <div class="panel-control" id="add-control" onclick="toggleAdd()" onmouseover="addTooltip(this, 'Add')">
+          <img src="../global_assets/img/dark/add.png" height="30px" style="padding: 5px">
+        </div>
+        <div class="panel-control" id="settings-control" onclick="toggleSettings()" onmouseover="addTooltip(this, 'Settings')">
+          <img src="../global_assets/img/dark/gear.png" height="30px">
+          </div>
         </div>
       </div>
       <div class="panel-item panel-content">
@@ -78,11 +85,14 @@
   <script src="../global_assets/js/libraries/stringFunctions.js"></script>
   <script src="../global_assets/js/icons.js"></script>
   <script src="../global_assets/js/windowControls.js"></script>
+  <script src="../global_assets/js/libraries/window.js"></script>
   <script src="../global_assets/js/libraries/richInput.js"></script>
   
   
   <!-- Components -->
   <script src="assets/js/vault.js"></script>
+  <script src="../global_assets/js/libraries/tooltip.js"></script>
+  <script src="assets/js/settings.js"></script>
   <script src="../global_assets/js/saveModule.js"></script>
   <script src="assets/js/content.js"></script>
   <script src="assets/js/add.js"></script>

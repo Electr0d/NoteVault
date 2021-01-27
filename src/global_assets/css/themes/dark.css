@@ -6,6 +6,7 @@
   --subheader-color: rgb(220, 220, 220);
   --error-color: rgb(250, 50, 50);
   --primary-hover: rgb(60, 60, 60);
+  --primary-border: rgb(40, 40, 40);
   /* accent */
   --primary-accent: rgb(71, 187, 255);
 
@@ -29,4 +30,8 @@
 
   /* markdown */
   --h3-border: rgb(100, 100, 100);
+
+  /* tooltip */
+  --tooltip-background: var(--secondary-background);
+  --tooltip-shaodw: var(--primary-shadow);
 }

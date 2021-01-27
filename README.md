@@ -7,3 +7,4 @@ cd NoteVault
 npm install
 npm start
 ```
+# Features

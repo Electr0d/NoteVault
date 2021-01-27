@@ -18,6 +18,7 @@ document.body.addEventListener('keydown', e => {
 	}
 })
 let components = {
+  tooltip: false,
   panel: {
     add: false
   },

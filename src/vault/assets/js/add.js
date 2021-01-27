@@ -1,6 +1,6 @@
 function toggleAdd() {
   togglePanel();
-  el.panelItems.add.classList.toggle('rotate');
+  document.querySelector('#add-control img').classList.toggle('rotate');
   el.panelItems.header.classList.toggle('panel-header-on-panel-down');
   el.content.classList.toggle('content-on-panel-down');
   if(!components.panel.add) {

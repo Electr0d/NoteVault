@@ -28,12 +28,16 @@
   backdrop-filter: brightness(0.4);
   border-bottom-color: var(--primary-accent);
 }
+.panel-controls {
+  display: flex;
+  flex-direction: row;
+}
 .panel-control {
-  padding: 5px;
   height: 30px;
   border-radius: 25px;
   cursor: pointer;
 }
+
 .panel-control:hover {
   background: var(--primary-hover);
 }
@@ -79,4 +83,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.change-password {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#change-password-button {
+  align-self: center;
+  width: calc(100% - 40px);
 }

@@ -31,7 +31,7 @@ function addNote(index, title, body) {
   let controls = addElement('div', { class: 'note-header-item note-controls', id: 'note-controls-' + index }, '', header);
 
   for(let control  in controlsUI) {
-    let c = addElement('div', { class: `note-control-item ${control}-control`, id: control + '-control-' + index, onclick: controlsUI[control].onclick }, '', controls);
+    let c = addElement('div', { class: `note-control-item ${control}-control`, id: control + '-control-' + index, onclick: controlsUI[control].onclick, onmouseover: `addTooltip(this, "${capitalize(control)}")` }, '', controls);
     addElement('img', { class: 'note-control-image', src: controlsUI[control].src }, '', c);
   }
   addElement('div', { class: 'note-item note-body note-body-hidden', id: 'note-body-' + index, innerHTML: 'innerHTML' }, marked(body), note);
@@ -47,7 +47,7 @@ function expandToggle(e, action) {
 
   header.classList[act]('note-header-expand');
   body.classList[altAction]('note-body-hidden');
-  e.classList[act]('rotate-control');
+  document.querySelector(`#expand-control-${index} img`).classList[act]('rotate-control');
 
 }
 
@@ -221,7 +221,7 @@ function confirmEdit(e) {
 
 function fullscreenToggle(e) {
   let index = e.id.replace('fullscreen-control-', '');
-  e.classList.toggle('rotate-control');
+  document.querySelector(`#fullscreen-control-${index} img`).classList.toggle('rotate-control');
   let icon = document.querySelector(`#${e.id} img`);
   let img = icon.src.includes('unfullscreen') ? 'fullscreen' : 'unfullscreen';
   icon.src = icons[img];
@@ -232,8 +232,9 @@ function fullscreenToggle(e) {
   document.querySelector('#note-' + index).classList.toggle('note-fullscreen');
   
   // expand button
-  let expand = document.querySelector('#expand-control-' + index);
-  let action = expand.classList.contains('rotate-control') && el.content.classList.contains('note-fullscreen') ? 'add' : 'toggle';
+  let expand = document.querySelector(`#expand-control-${index}`);
+  let expandImage = document.querySelector(`#expand-control-${index} img`);
+  let action = expandImage.classList.contains('rotate-control') && el.content.classList.contains('note-fullscreen') ? 'add' : 'toggle';
   expandToggle(expand, action);
   let attributeType = expand.hasAttribute('onclick') ? 'removeAttribute' : 'setAttribute';
 
