@@ -52,4 +52,4 @@ Your notes are saved locally and encrypted using AES 256 algorithm provided by t
 Give me feedback on this program by filing an issue!
 
 # License
-Copyright (C) 2021-present Hamza Alsarakbi, licensed under MIT
+Copyright (C) 2021-present Hamza Alsarakbi, using MIT License
