@@ -10,8 +10,10 @@ npm start
 # Features
 ## Add notes
 To add notes, you open the add menu by pressing the "+" icon or pressing **Alt + A**
+![](https://www.github.com/Electr0d/NoteVault/blob/master/docs/img/add.gif)
+
 You can use markdown to write the note body. For example,
-!()[https://www.github.com/Electr0d/NoteVault/blob/master/docs/img/add.gif]
+
 ```
 **Bold text**
 ```
